@@ -1,4 +1,4 @@
-package com.lizza.idempotence;
+package com.lizza.base.producer.idempotence;
 
 import com.google.common.collect.Lists;
 import org.apache.kafka.clients.producer.KafkaProducer;

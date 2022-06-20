@@ -1,4 +1,4 @@
-package com.lizza.partitions;
+package com.lizza.base.producer.partitions;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.KafkaProducer;

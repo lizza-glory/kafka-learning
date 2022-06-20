@@ -1,4 +1,4 @@
-package com.lizza.partitions;
+package com.lizza.base.producer.partitions;
 
 import cn.hutool.core.util.RandomUtil;
 import org.apache.kafka.clients.producer.KafkaProducer;
@@ -51,10 +51,37 @@ public class CustomPartitionerTests {
         producer.close();
     }
 
-    public static void main(String[] args) {
-        for (int i = 0; i < 19; i++) {
-            System.out.println();
+    @Test
+    public void test2() throws Exception {
+        // 创建 producer
+        Properties properties = new Properties();
+        properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+        properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+        properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 
+        Producer<String, String> producer = new KafkaProducer<>(properties);
+
+        // 发送消息
+        for (int i = 0; i < 13; i++) {
+            ProducerRecord<String, String> record = new ProducerRecord<>(
+                    // 主题
+                    "topic-1",
+                    // 分区
+                    i % 4,
+                    // key
+                    "key-" + i,
+                    // 数据
+                    "data-" + i
+
+            );
+            // 同步和异步输出的分区号顺序不一致, 同步发送输出的顺序的分区号, 异步输出的倒序的分区号
+            producer.send(record, (data, e) -> {
+                System.out.println("data: " + data + ", partition: " + data.partition());
+            }).get();
         }
+
+        // 关闭资源
+        producer.close();
     }
+
 }

@@ -1,4 +1,4 @@
-package com.lizza.async;
+package com.lizza.base.producer.async;
 
 import com.google.common.collect.Lists;
 import org.apache.kafka.clients.producer.KafkaProducer;

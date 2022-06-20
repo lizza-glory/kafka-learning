@@ -1,4 +1,4 @@
-package com.lizza.performance;
+package com.lizza.base.producer.performance;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;

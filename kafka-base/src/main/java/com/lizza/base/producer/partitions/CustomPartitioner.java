@@ -1,4 +1,4 @@
-package com.lizza.partitions;
+package com.lizza.base.producer.partitions;
 
 import cn.hutool.core.util.StrUtil;
 import org.apache.kafka.clients.producer.Partitioner;
