@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc4f75e9-1bee-4338-9de9-31881a24a148" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/kafka-base/src/main/java/com/lizza/base/consumer/BaseApiTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-base/src/main/java/com/lizza/ack/AckTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-base/src/main/java/com/lizza/base/producer/ack/AckTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-base/src/main/java/com/lizza/async/AsyncProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-base/src/main/java/com/lizza/base/producer/async/AsyncProducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-base/src/main/java/com/lizza/idempotence/IdempotenceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-base/src/main/java/com/lizza/base/producer/idempotence/IdempotenceTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-base/src/main/java/com/lizza/partitions/CustomPartitioner.java" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-base/src/main/java/com/lizza/base/producer/partitions/CustomPartitioner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-base/src/main/java/com/lizza/partitions/CustomPartitionerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-base/src/main/java/com/lizza/base/producer/partitions/CustomPartitionerTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-base/src/main/java/com/lizza/partitions/DefaultPartitionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-base/src/main/java/com/lizza/base/producer/partitions/DefaultPartitionTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-base/src/main/java/com/lizza/performance/CustomConfigTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-base/src/main/java/com/lizza/base/producer/performance/CustomConfigTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-base/src/main/java/com/lizza/sync/SyncProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-base/src/main/java/com/lizza/base/producer/sync/SyncProducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-base/src/main/java/com/lizza/transaction/TransactionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-base/src/main/java/com/lizza/base/producer/transaction/TransactionTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka-base/src/main/java/com/lizza/base/consumer/seek/PoolByOffset.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka-base/src/main/java/com/lizza/base/consumer/seek/PoolByTime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka-base/src/main/java/com/lizza/base/producer/base/BaseProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka-base/src/main/java/com/lizza/base/consumer/BaseApiTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-base/src/main/java/com/lizza/base/consumer/base/BaseApiTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,47 +68,34 @@
       <recent name="com.lizza" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CustomPartitionerTests.test2">
-    <configuration name="BaseApiTests" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.lizza.base.consumer.BaseApiTests" />
+  <component name="RunManager" selected="JUnit.PoolByTime.test1">
+    <configuration name="BaseApiTests.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="kafka-base" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.lizza.base.consumer.*" />
+          <option name="PATTERN" value="com.lizza.base.consumer.base.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BaseApiTests.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="kafka-base" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.lizza.base.consumer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.lizza.base.consumer" />
-      <option name="MAIN_CLASS_NAME" value="com.lizza.base.consumer.BaseApiTests" />
-      <option name="METHOD_NAME" value="test1" />
+      <option name="PACKAGE_NAME" value="com.lizza.base.consumer.base" />
+      <option name="MAIN_CLASS_NAME" value="com.lizza.base.consumer.base.BaseApiTests" />
+      <option name="METHOD_NAME" value="test2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BaseApiTests.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BaseProducer.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="kafka-base" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.lizza.base.consumer.*" />
+          <option name="PATTERN" value="com.lizza.base.producer.base.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.lizza.base.consumer" />
-      <option name="MAIN_CLASS_NAME" value="com.lizza.base.consumer.BaseApiTests" />
-      <option name="METHOD_NAME" value="test2" />
+      <option name="PACKAGE_NAME" value="com.lizza.base.producer.base" />
+      <option name="MAIN_CLASS_NAME" value="com.lizza.base.producer.base.BaseProducer" />
+      <option name="METHOD_NAME" value="test1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -136,16 +117,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TransactionTests.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PoolByOffset.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="kafka-base" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.lizza.transaction.*" />
+          <option name="PATTERN" value="com.lizza.base.consumer.seek.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.lizza.transaction" />
-      <option name="MAIN_CLASS_NAME" value="com.lizza.transaction.TransactionTests" />
+      <option name="PACKAGE_NAME" value="com.lizza.base.consumer.seek" />
+      <option name="MAIN_CLASS_NAME" value="com.lizza.base.consumer.seek.PoolByOffset" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PoolByTime.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kafka-base" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lizza.base.consumer.seek.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.lizza.base.consumer.seek" />
+      <option name="MAIN_CLASS_NAME" value="com.lizza.base.consumer.seek.PoolByTime" />
       <option name="METHOD_NAME" value="test1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -154,11 +151,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PoolByTime.test1" />
+        <item itemvalue="JUnit.PoolByOffset.test1" />
+        <item itemvalue="JUnit.BaseProducer.test1" />
         <item itemvalue="JUnit.CustomPartitionerTests.test2" />
         <item itemvalue="JUnit.BaseApiTests.test2" />
-        <item itemvalue="JUnit.BaseApiTests.test1" />
-        <item itemvalue="Application.BaseApiTests" />
-        <item itemvalue="JUnit.TransactionTests.test1" />
       </list>
     </recent_temporary>
   </component>
@@ -174,7 +171,10 @@
       <workItem from="1654396396884" duration="9021000" />
       <workItem from="1654913457943" duration="8540000" />
       <workItem from="1655188567624" duration="1000" />
-      <workItem from="1655622494715" duration="2778000" />
+      <workItem from="1655622494715" duration="3653000" />
+      <workItem from="1656421525754" duration="1564000" />
+      <workItem from="1656553388945" duration="1248000" />
+      <workItem from="1656837642557" duration="3750000" />
     </task>
     <servers />
   </component>

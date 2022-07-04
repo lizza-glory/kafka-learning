@@ -1,4 +1,4 @@
-package com.lizza.base.consumer;
+package com.lizza.base.consumer.base;
 
 import com.google.common.collect.Lists;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
@@ -77,7 +77,7 @@ public class BaseApiTests {
      * 消费者组
      */
     @Test
-    public void test2() throws Exception {
+    public void test3() throws Exception {
 
         // 1. 配置
         Properties properties = new Properties();
