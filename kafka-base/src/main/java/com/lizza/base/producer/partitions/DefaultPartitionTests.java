@@ -1,6 +1,14 @@
 package com.lizza.base.producer.partitions;
 
+import cn.hutool.core.util.StrUtil;
+import cn.hutool.json.JSONUtil;
+import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.kafka.clients.admin.AdminClient;
+import org.apache.kafka.clients.admin.CreateTopicsResult;
+import org.apache.kafka.clients.admin.KafkaAdminClient;
+import org.apache.kafka.clients.admin.ListTopicsResult;
+import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -25,23 +33,35 @@ public class DefaultPartitionTests {
         properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 
+        // 创建主题
+        String topic = "topic-1";
+        try(AdminClient client = KafkaAdminClient.create(properties)) {
+            client.deleteTopics(Lists.newArrayList(topic));
+            NewTopic newTopic = new NewTopic(topic, 4, (short) 1);
+            CreateTopicsResult result = client.createTopics(Lists.newArrayList(newTopic));
+            System.out.println(StrUtil.format("create new topic: {}, result: {}", topic, result.all().get()));
+        }
+
+
         Producer<String, String> producer = new KafkaProducer<>(properties);
 
-        // 发送消息
+        // 发送消息, 创建 topic-1 主题, 设置 4 个分区
         for (int i = 0; i < 4; i++) {
-            ProducerRecord<String, String> record = new ProducerRecord<>(
-                    // 主题
-                    "topic-1",
-                    // 分区
-                    i,
-                    "",
-                    "hello kafka~"
+            for (int j = 0; j < 5; j++) {
+                ProducerRecord<String, String> record = new ProducerRecord<>(
+                        // 主题
+                        topic,
+                        // 分区
+                        i,
+                        "",
+                        "hello kafka, this is message[" + j + "]"
 
-            );
-            // 同步和异步输出的分区号顺序不一致, 同步发送输出的顺序的分区号, 异步输出的倒序的分区号
-            producer.send(record, (data, e) -> {
-                System.out.println("partition: " + data.partition());
-            }).get();
+                );
+                // 同步和异步输出的分区号顺序不一致, 同步发送输出的顺序的分区号, 异步输出的倒序的分区号
+                producer.send(record, (data, e) -> {
+                    System.out.println("partition: " + data.partition());
+                }).get();
+            }
         }
 
         // 关闭资源
