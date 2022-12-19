@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>kafka-base</module>
+        <module>spring-kafka-consumer</module>
     </modules>
 
     <packaging>pom</packaging>

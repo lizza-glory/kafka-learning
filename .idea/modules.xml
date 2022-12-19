@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/kafka.iml" filepath="$PROJECT_DIR$/.idea/kafka.iml" />
       <module fileurl="file://$PROJECT_DIR$/kafka-base/kafka-base.iml" filepath="$PROJECT_DIR$/kafka-base/kafka-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/kafka-learning.iml" filepath="$PROJECT_DIR$/.idea/kafka-learning.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-kafka-consumer/spring-kafka-consumer.iml" filepath="$PROJECT_DIR$/spring-kafka-consumer/spring-kafka-consumer.iml" />
     </modules>
   </component>
 </project>
